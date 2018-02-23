@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="loginStatus" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ff6090;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <Pane layoutX="-1.0" prefHeight="400.0" prefWidth="309.0" style="-fx-background-color: #b0003a;">
@@ -53,7 +52,7 @@
             <Image url="@../image/keylog.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnLogin" layoutX="486.0" layoutY="157.0" style="-fx-background-color: #c158d#ff1744c;" text="Login">
+      <JFXButton fx:id="btnLogin" layoutX="486.0" layoutY="157.0" onAction="#Login" style="-fx-background-color: #c158d#ff1744c;" text="Login">
          <font>
             <Font size="14.0" />
          </font>
@@ -65,6 +64,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="dbStatus" layoutX="389.0" layoutY="378.0" prefHeight="17.0" prefWidth="200.0" textFill="#e80e0e" />
+      <Label fx:id="dbStatus" layoutX="389.0" layoutY="378.0" prefHeight="17.0" prefWidth="200.0" textFill="#1021e5" />
+      <Label fx:id="loginStatus" layoutX="353.0" layoutY="38.0" prefHeight="17.0" prefWidth="210.0" />
    </children>
 </AnchorPane>
