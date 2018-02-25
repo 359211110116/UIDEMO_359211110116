@@ -51,14 +51,17 @@ public class Controller implements Initializable {
     @FXML
     public  void Login(ActionEvent event){
         try {
-            if (this.loginmodel.isLogin(username.getText(),password.getText())) {
-                Stage stage = (Stage) this.btnLogin.getScene().getWindow();
-                stage.close();
-                adminDashborad();
-            } else {
-                loginStatus.setText ("Your username or password is invalid");
-            }
-        } catch (Exception e) {
+            Stage adminStage = new Stage();
+            FXMLLoader adminLoader = new FXMLLoader();
+            Pane adminRoot = (Pane) adminLoader.load(
+                    getClass().getResource("/admin/adminDashboard.fxml").openStream());
+            adminController adminController = adminLoader.getController();
+            Scene scene = new Scene(adminRoot);
+            adminStage.setScene(scene);
+            adminStage.setTitle("Admin Dashboard");
+            adminStage.setResizable(false);
+            adminStage.show();
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -69,7 +72,8 @@ public class Controller implements Initializable {
         try {
             Stage adminStage = new Stage();
             FXMLLoader adminLoader = new FXMLLoader();
-            Pane adminRoot = (Pane) adminLoader.load(getClass().getResource("/admin/adminDashboard.fxml").openStream());
+            Pane adminRoot = (Pane) adminLoader.load(
+                    getClass().getResource("/admin/adminDashboard.fxml").openStream());
             adminController adminController = adminLoader.getController();
             Scene scene = new Scene(adminRoot);
             adminStage.setScene(scene);
